@@ -1,0 +1,282 @@
+/* General body styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to bottom right, #1a1a1a, #002244, #000);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* App container */
+.app-container {
+  width: 100%;
+  max-width: 700px;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Form container */
+.form-container {
+  padding: 5px;
+  background-color: #1f1f1f;
+  border-radius: 13px;
+  border: -3px solid transparent;
+  background-image: linear-gradient(#1f1f1fcc, #1f1f1fc2), linear-gradient(45deg, #b63c5d, #0053a0, #6a00ff);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  position: relative;
+}
+
+form {
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* Form groups for left and right columns */
+.form-group {
+  flex: 1 1 45%;
+}
+
+/* Form labels */
+form label {
+  display: block;
+  margin-bottom: 8px;
+  color: #e0e0e0;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: start;
+}
+
+/* Form input fields */
+form input[type="number"],
+form select {
+  width: 100%;
+  padding: 15px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  background-color: #121212;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  color: #ffffff;
+}
+
+/* Input and select focus */
+form input[type="number"]:focus,
+form select:focus {
+  border-color: #3cbaff;
+  box-shadow: 0 0 6px rgba(60, 186, 255, 0.3);
+  outline: none;
+}
+
+/* Full width for submit button */
+form button {
+  flex: 1 1 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #3cbaff, #8a3cbc);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+/* Button hover effect */
+form button:hover {
+  background: linear-gradient(135deg, #8a3cbc, #3cbaff);
+  transform: translateY(-2px);
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 500px) {
+  form {
+    flex-direction: column; /* Stack fields on smaller screens */
+  }
+
+  .form-group {
+    flex: 1 1 100%; /* Full width for each field */
+  }
+
+  form button {
+    font-size: 1rem;
+  }
+}
+
+body {
+  margin: 0;
+  overflow: hidden; 
+  font-family: Arial, sans-serif;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw !important;
+  height: 100vh;
+}
+
+.title {
+  color: white;
+  font-size: 3rem;
+  text-align: center;
+  margin: 20px;
+  position: relative;
+  z-index: 1;
+  height: 100px;
+  display: flex;
+  width: max-content;
+  padding: 5px;
+  background-color: #2a2a2a;
+  border-radius: 13px;
+  border: -3px solid transparent;
+  background-image: linear-gradient(#2a2a2acc, #2a2a2ac2), linear-gradient(45deg, #b63c5d, #0053a0, #6a00ff);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+.title span {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+
+/* Heartbeat Graph Background */
+.heartbeat-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0; /* Behind other elements */
+}
+
+.heartbeat-line {
+  position: absolute;
+  bottom: 30%;
+  left: 0;
+  width: 200%; /* Wider than the screen */
+  height: 5px; /* Line thickness */
+  background: transparent;
+  border: 2px solid #ff3f78; /* Heartbeat line color */
+  animation: heartbeat 1s infinite; /* Animation speed and repetition */
+}
+
+/* Keyframes for heartbeat effect */
+@keyframes heartbeat {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(5%); }
+  50% { transform: translateX(0); }
+  75% { transform: translateX(-5%); }
+  100% { transform: translateX(0); }
+}
+
+.run {
+  width: 50%;
+  height: 3px;
+  position: absolute;
+  left: 0;
+  
+  transform: translateX(-100%);
+}
+
+.run-left {
+  background: linear-gradient(90deg, transparent, #ff3f78);
+  animation: strokeAnimate1 4s infinite;
+}
+
+.run-right {
+  background: linear-gradient(270deg, transparent, #3fdbff);
+  animation: strokeAnimate2 4s infinite;
+}
+
+@keyframes strokeAnimate1 {
+  0% {
+      transform: translateX(-150%); 
+  }
+  50% {
+      transform: translateX(0);
+  }
+  100% {
+      transform: translateX(150%); 
+  }
+}
+
+@keyframes strokeAnimate2 {
+  0% {
+      transform: translateX(150%); 
+  }
+  50% {
+      transform: translateX(0);
+  }
+  100% {
+      transform: translateX(-150%); 
+  }
+}
+
+.run:nth-child(1) { top: 0%; }
+.run:nth-child(2) { top: 5%; }
+.run:nth-child(3) { top: 10%; }
+.run:nth-child(4) { top: 15%; }
+.run:nth-child(5) { top: 20%; }
+.run:nth-child(6) { top: 25%; }
+.run:nth-child(7) { top: 30%; }
+.run:nth-child(8) { top: 35%; }
+.run:nth-child(9) { top: 40%; }
+.run:nth-child(10) { top: 45%; }
+.run:nth-child(11) { top: 50%; }
+.run:nth-child(12) { top: 55%; }
+.run:nth-child(13) { top: 60%; }
+.run:nth-child(14) { top: 65%; }
+.run:nth-child(15) { top: 70%; }
+.run:nth-child(16) { top: 75%; }
+.run:nth-child(17) { top: 80%; }
+.run:nth-child(18) { top: 85%; }
+.run:nth-child(19) { top: 90%; }
+.run:nth-child(20) { top: 95%; }
+.run:nth-child(21) { top: 100%; }
+.run:nth-child(22) { top: 105%; }
+
+/* === GLOBAL === */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* === CUSTOM SCROLLBAR === */
+*::-webkit-scrollbar {
+    width: 1rem;
+}
+
+*::-webkit-scrollbar-thumb {
+    height: 4rem;
+    border-radius: 0.5rem;
+    border: 4px solid transparent;
+    background-clip: content-box;
+    background-color: #8a3cbc;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background-color: #6a2e91;
+}
+
+*::-webkit-scrollbar-track {
+    background-color: #1f1f1f;
+}
